@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ColorRing } from "react-loader-spinner";
 
 export default function Home() {
   const [generatedImage, setGeneratedImage] = useState<string>("");
   const [prompt, setPrompt] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [inferences, setInferences] = useState<any[]>([]);
 
   const generateImage = async () => {
     setLoading(true);
@@ -38,6 +39,27 @@ export default function Home() {
     setGeneratedImage(uri);
     setLoading(false);
   };
+  const fetchImages = async () => {
+    setInferences([]);
+
+    const response = await fetch("/api/showcase", {
+      method: "GET",
+    });
+
+    const { data } = await response.json();
+    if (data.error) {
+      window.alert("Error: " + data.error + " " + data.message);
+      return;
+    }
+
+    console.log(data); // <-- List all showcase of this model
+
+    setInferences(data);
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
 
   return (
     <div className="bg-black mt-10 flex items-center justify-center">
