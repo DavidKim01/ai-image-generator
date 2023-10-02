@@ -2,7 +2,7 @@ import { Leap } from "@leap-ai/sdk";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-  const modelId = "7575ea52-3d4f-400f-9ded-09f7b1b1a5b8"; // Model: OpenJourney v1
+  const modelId = "1e7737d7-545e-469f-857f-e4b46eaa151d"; // Model: OpenJourney v4
   const apiKey = process.env.LEAP_API_KEY as string;
 
   if (!apiKey) {

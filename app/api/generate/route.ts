@@ -18,7 +18,7 @@ export async function POST(request: Request) {
         );
     }
 
-    const MODEL_ID = "7575ea52-3d4f-400f-9ded-09f7b1b1a5b8"; // Model: OpenJourney v1
+    const MODEL_ID = "1e7737d7-545e-469f-857f-e4b46eaa151d"; // Model: OpenJourney v4
     const IMAGE_WIDTH = 512;
     const IMAGE_HEIGHT = 512;
     const NUMBER_OF_IMAGES = 1;

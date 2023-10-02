@@ -69,7 +69,9 @@ export default function Home() {
   const renderShowcase = () => {
     return (
       <section className="mt-16 max-w-full">
-        <h1 className="text-xl font-semibold mb-5">Community showcase</h1>
+        <h1 className="text-xl font-semibold text-white mb-5">
+          Community Showcase
+        </h1>
 
         <div className="grid grid-cols-2 gap-4 mt-4">
           {inferences ? (
